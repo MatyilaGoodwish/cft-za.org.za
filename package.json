@@ -1,0 +1,19 @@
+{
+  "name": "cft-za.org.za",
+  "version": "1.0.0",
+  "description": "Housing Database System Core",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatyilaGoodwish/cft-za.org.za.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatyilaGoodwish/cft-za.org.za/issues"
+  },
+  "homepage": "https://github.com/MatyilaGoodwish/cft-za.org.za#readme"
+}
