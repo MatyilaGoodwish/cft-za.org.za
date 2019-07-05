@@ -17,30 +17,33 @@
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-route.js"></script>
     <script src="app/bootstrap.js"></script>
+    <script src="lib/swal.js"></script>
     <link href="styles/styles.min.css" rel="stylesheet" />
     
   </head>
-  <body class="container">
-      <div class="container my-4 rounded shadow">
-          <div class="row">
-              <div class="col-md-3 bg-light p-2 rounded border">
+  <body>
+      <div class="container my-4 rounded p-2">
+          <div class="row p-2">
+              <div class="col-md-3 bg-light p-3 rounded">
                <a href="/#/"><img src="./images/Logo.png" class="w-100 "/></a>
                <p class="text-muted text-center">
                   Housing Database
                </p>
                <hr/>
-               <a href="/#/register" class="btn btn-block btn-warning">Register User</a>
-               <a href="/#/search" class="btn btn-block btn-warning">Advanced Search</a>
-               <a href="/#/search" class="btn btn-block btn-warning">Waiting List</a>
-               <a href="/#/manage" class="btn btn-block btn-warning">Manage User</a>  
-               <a href="/#/updates" class="btn btn-block btn-info">Log Fault</a>
+               <a href="/#/" class="btn btn-block btn-warning  btn-lg">Register User</a>
+               <a href="/#/search" class="btn btn-block btn-warning btn-lg">Advanced Search</a>
+               <a href="/#/search" class="btn btn-block btn-warning btn-lg">Waiting List</a>
+               <a href="/#/manage" class="btn btn-block btn-warning btn-lg">Manage User</a>  
               </div>
-              <div class="col-md-9">
+              <div class="col"></div>
+              <div class="col-md-8">
                  <div ng-view></div>
               </div>
           </div>
        </div>
        
-    <script src="app/main/main-component.js"></script>
+   
+    <script src="app/group/group.component.js"></script>
+    <script src="app/main/main-service.js"></script>
   </body>
 </html>

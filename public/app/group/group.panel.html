@@ -1,0 +1,24 @@
+<form>
+        <div class="display-4 border-bottom my-2">Access Control</div>
+    
+        <div class="row bg-light my-4">
+            <div class="col-md-6 p-2">
+                    <p class="lead">Admin Group User</p>
+                    <select class="form-control text-lg">
+                        <option>
+                              (Admin)  mothibe.t@cft-za.org.za
+                        </option>
+                    </select>
+
+                    <p class="lead">Secure PIN</p>
+                    <input type="password" ng-model="$ctrl.pin" placeholder="PIN" class="form-control"/>
+            </div>
+            <div class="col-md-6 p-2">
+         
+                 
+            </div>
+        </div>
+        <button class="btn btn-lg btn-danger my-5" ng-click="$ctrl.revokeAccess();">Revoke Access</button>
+    
+        <button class="btn btn-lg btn-success my-5" ng-click="$ctrl.getPermission();">Authorize</button>
+    </form>
