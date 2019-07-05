@@ -3,19 +3,26 @@
     
         <div class="row bg-light my-4 shadow border rounded">
             <div class="col-md-6 p-2">
+                    <div class="text-white bg-dark p-2">
                     <p class="lead font-weight-bold"><img ng-src="{{$ctrl.avatarImage}}" width="32"/> Admin Group User</p>
                     <select class="form-control text-lg">
                         <option>
                               (Admin) mothibe.t@cft-za.org.za
                         </option>
                     </select>
+                    </div>
                     <br>
+
+                    <div class="text-white bg-dark p-2">
                     <p class="lead font-weight-bold"><img ng-src="{{$ctrl.pincodeImage}}" width="16"/> Secure PIN</p>
                     <input type="password" ng-model="$ctrl.pin" placeholder="PIN" class="form-control"/>
+                    </div>
                     <br>
+                    <div class="text-white bg-dark p-2">
                     <p class="lead font-weight-bold">What is 5+3 ?             <span class="alert alert-success border rounded" ng-if="$ctrl.capture === 8"><img src="images/check-mark-icon.png" width="64"></span>
                     </p>
                     <input type="number" ng-model="$ctrl.capture" class="form-control"/>
+                    </div>
                     <br/>
                     <button class="btn btn-lg btn-danger my-2" ng-click="$ctrl.revokeAccess();"><img ng-src="images/lockpad.png" width="32"/> Revoke Access</button>
     
