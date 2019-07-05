@@ -1,0 +1,42 @@
+<div class="container p-3 bg-light shadow-sm border">
+   <form>
+       <div class="display-4 font-weight-bold">Register Member</div>
+       <p class="text-muted lead border-bottom">
+           Register new community member to CFT housing database.
+       </p>
+       <div class="row">
+           <div class="col-md-6">
+                <p class="lead text-muted border-bottom">Reference Number</p>
+                <input ng-model="$ctrl.refNumber" type="text" class="form-control" placeholder="Ref No.:" />
+                <br>
+                <p class="lead text-muted border-bottom">Title</p>
+                <select class="form-control" ng-model="$ctrl.title">
+                    <option>Mr</option>
+                    <option>Miss</option>
+                    <option>Mrs</option>
+                    <option>Dr</option>
+                    <option>Prof</option>
+                </select>
+                <br>
+                <p class="lead text-muted border-bottom">Full Names</p>
+                <input type="text" class="form-control" ng-model="$ctrl.fullNames"/>
+            </div>
+           <div class="col-md-6">
+                <p class="lead text-muted border-bottom">Surname</p>
+                <input type="text" class="form-control" ng-model="$ctrl.surname"/>
+                <br>
+                <p class="lead text-muted border-bottom">RSA ID Number</p>
+                <input type="text" class="form-control" ng-model="$ctrl.idNumber"/>
+                <br>
+                <p class="lead text-muted border-bottom">Gender</p>
+                <select class="form-control" ng-model="$ctrl.gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+                
+                
+                
+           </div>
+       </div>
+   </form>    
+</div>

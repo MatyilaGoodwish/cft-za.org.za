@@ -1,7 +1,7 @@
 (function () {
     const app = angular.module("app");
     app.component("group", {
-        templateUrl: "app/group/group.panel.html",
+        templateUrl: "app/views/authorization.html",
         controller: function (DbContextSvc) {
             this.padlockImage = "images/lock.png";
             this.avatarImage = "images/avatar.png";
