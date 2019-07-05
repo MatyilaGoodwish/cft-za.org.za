@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CFT Housing Application | Enterprise Internal</title>
-
+    <title>CFT Housing Database | CRM Solution</title>
+    <meta name="keywords" content="housing,rdp,town,planning" />
+    <meta name="description" content="CFT Housing Application | Database & Estates Internal" />
+    <link rel="shortcut icon" href="images/Logo.png" type="image/png" />
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/6.2.4/firebase-app.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/6.2.4/firebase-auth.js"></script>
-    <script defer src="/__/firebase/6.2.4/firebase-database.js"></script>
-    <script defer src="/__/firebase/6.2.4/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/6.2.4/firebase-storage.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-auth.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-database.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-messaging.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+    <script src="/__/firebase/init.js"></script>
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-route.js"></script>
     <script src="app/bootstrap.js"></script>
@@ -21,7 +23,7 @@
     <link href="styles/styles.min.css" rel="stylesheet" />
     
   </head>
-  <body>
+  <body style="background:linear-gradient(35deg, rgba(19, 0, 0, 0.692),rgba(201, 181, 4, 0.384)) fixed no-repeat center;">
       <div class="container my-4 rounded p-2">
           <div class="row p-2">
               <div class="col-md-3 bg-light p-3 rounded">
@@ -30,13 +32,14 @@
                   Housing Database
                </p>
                <hr/>
-               <a href="/#/" class="btn btn-block btn-warning  btn-lg">Register User</a>
-               <a href="/#/search" class="btn btn-block btn-warning btn-lg">Advanced Search</a>
-               <a href="/#/search" class="btn btn-block btn-warning btn-lg">Waiting List</a>
-               <a href="/#/manage" class="btn btn-block btn-warning btn-lg">Manage User</a>  
-              </div>
+               <a href="/#/" class="btn btn-block btn-warning  btn-lg"><img ng-src="images/user.png" width="32"/> Register User</a>
+               <a href="/#/" class="btn btn-block btn-warning btn-lg"><img ng-src="images/searchicon.png" width="32"/> Advanced Search</a>
+               <a href="/#/" class="btn btn-block btn-warning btn-lg"><img ng-src="images/waiting.png" width="32"/> Waiting List</a>
+               <a href="/#/" class="btn btn-block btn-warning btn-lg"><img ng-src="images/manage.png" width="32"/> Manage User</a>  
+               <a href="/#/" class="btn btn-block btn-warning btn-lg"><img ng-src="images/sms.png" width="32"/> SMS Members</a> 
+            </div>
               <div class="col"></div>
-              <div class="col-md-8">
+              <div class="col-md-8 p-3">
                  <div ng-view></div>
               </div>
           </div>
@@ -44,6 +47,6 @@
        
    
     <script src="app/group/group.component.js"></script>
-    <script src="app/main/main-service.js"></script>
+    <script src="app/net/common.service.js"></script>
   </body>
 </html>
