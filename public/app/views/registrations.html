@@ -44,6 +44,11 @@
                 </div>
                 <br>
                 <div class="text-white bg-dark p-2">
+                <p class="lead text-white ">Street Address</p>
+                <input type="text" class="form-control" ng-model="$ctrl.member.address" required/>
+                </div>
+                <br>
+                <div class="text-white bg-dark p-2">
                 <p class="lead text-white ">Province</p>
                 <select class="form-control" ng-model="$ctrl.member.province" required>
                     <option>
@@ -108,6 +113,18 @@
                 <p class="lead text-white">Contact</p>
                 <input type="text" placeholder="+27" class="form-control" ng-model="$ctrl.member.contact" required/>
                 </div>
+                <br>
+
+                <div class="text-white bg-primary p-2">
+                    <p class="lead text-white font-weight-bold">New Application</p>
+                    <select class="form-control" ng-model="$ctrl.member.application" required>
+                        <option>New</option>
+                        <option>Lost Forms/Database</option>
+                        <option>Demand Database</option>
+                        <option>Subsidy Approvals</option>
+                        <option>Form C</option>
+                    </select>
+                    </div>
                 <br>
 
                 <button class="btn btn-lg btn-danger my-2" ng-click="$ctrl.cancel();"> Cancel</button>
