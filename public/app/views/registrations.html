@@ -5,7 +5,7 @@
            Register new community member to member housing database.
        </p>
        <div class="row p-2">
-           <div class="col-md-6 bg-dark">
+           <div class="col-md-6 bg-light">
                 <div class="text-white bg-dark p-2">
                 <p class="lead text-white ">Reference Number</p>
                 <input required ng-model="$ctrl.member.refNumber" type="text" class="form-control" placeholder="Ref No.:" />
@@ -74,16 +74,17 @@
                 </select>
                 </div>
             </div>
-           <div class="col-md-6 bg-dark">
+           <div class="col-md-6 bg-light">
                 <div class="text-white bg-dark p-2">
                 <p class="lead text-white">Surname</p>
                 <input type="text" class="form-control" ng-model="$ctrl.member.surname" required/>
                 </div>
                 <br>
                 <div class="text-white bg-dark p-2">
-                <p class="lead text-white">RSA ID Number</p>
+                <p class="lead text-white">RSA ID Number </p>
                 <input type="text" class="form-control" ng-model="$ctrl.member.idNumber" required/>
-                </div>
+                     
+                 </div>
                 <br>
                 <div class="text-white bg-dark p-2">
                 <p class="lead text-white">Gender</p>
@@ -131,5 +132,6 @@
                 <button class="btn btn-lg btn-success my-2" ng-click="$ctrl.saveRecord();"> Save Record</button>
            </div>
        </div>
-   </form>    
+   </form>  
+   {{ $ctrl.member}}  
 </div>

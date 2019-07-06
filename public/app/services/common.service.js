@@ -11,6 +11,9 @@
                 this.authStatusCheck();
             });
         }
+        this.saveToDB = function (memberDetails) {
+            swal(memberDetails);
+        }
         this.createNewAdmin = function (pin) {
             firebase.auth().createUserWithEmailAndPassword("mothibe.t@cft-za.org.za", btoa("mothibe.t@cft-za.org.za:786") + pin)
                 .catch(function (error) {
