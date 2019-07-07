@@ -1,6 +1,11 @@
 (function(){
     const app = angular.module("app", ["ngRoute"]);
-    app.config(function($routeProvider, $locationProvider){
+
+    app.service("checkAuth", function(){
+
+    })
+
+    app.config(function($routeProvider, $locationProvider, checkAuth){
         $locationProvider.hashPrefix("");
         $routeProvider
         .when("/", {
@@ -8,38 +13,56 @@
         })
         .when("/waiting", {
             template: "<waiting></waiting>",
-            resolves: function(){
-                swal("test resolves");
+            resolve: {
+                message: function(){
+                   firebase.auth().onAuthStateChanged(function(user){
+                       if(user){
+                        swal("good")
+                       }else{
+                           swal("not good")
+                       }
+                   })
+                }
             }
         })
         .when("/new", {
             template: "<new></new>",
-            resolves: function(){
-                swal("test resolves");
+            resolve: {
+                message: function(){
+                    swal("test resolve");
+                }
             }
         })
         .when("/forms", {
             template: "<forms></forms>",
-            resolves: function(){
-                swal("test resolves");
+            resolve: {
+                message: function(){
+                    swal("test resolve");
+                }
             }
         })
         .when("/demand", {
             template: "<demand></demand>",
-            resolves: function(){
-                swal("test resolves");
+            resolve: {
+                message: function(){
+                    swal("test resolve");
+                }
             }
         })
         .when("/lostforms", {
             template: "<lostforms></lostforms>",
-            resolves: function(){
-                swal("test resolves");
+            resolve: {
+                message: function(){
+                    swal("test resolve");
+                }
             }
         })
         .when("/subsidy", {
             template: "<subsidy></subsidy>",
-            resolves: function(){
-                swal("test resolves");
+            resolve: {
+                message: function(){
+                    swal("test resolve");
+                }
             }
         })
         .when("/register",{
