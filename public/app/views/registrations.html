@@ -8,7 +8,7 @@
            <div class="col-md-6 bg-light">
                 <div class="text-white bg-dark p-2">
                 <p class="lead text-white ">Reference Number</p>
-                <input required ng-model="$ctrl.member.refNumber" type="text" class="form-control" placeholder="Ref No.:" />
+                <input required ng-model="$ctrl.member.ref" type="text" class="form-control" placeholder="Ref No.:" />
                 </div>
                 <br>
                 <div class="text-white bg-dark p-2">
@@ -24,7 +24,7 @@
                 <br>
                 <div class="text-white bg-dark p-2">
                 <p class="lead text-white ">Full Names</p>
-                <input type="text" class="form-control" ng-model="$ctrl.member.fullNames" required/>
+                <input type="text" class="form-control" ng-model="$ctrl.member.fullnames" required/>
                 </div>
                 <br>
                 <div class="text-white bg-dark p-2">
@@ -82,7 +82,7 @@
                 <br>
                 <div class="text-white bg-dark p-2">
                 <p class="lead text-white">RSA ID Number </p>
-                <input type="text" class="form-control" ng-model="$ctrl.member.idNumber" required/>
+                <input type="text" class="form-control" ng-model="$ctrl.member.idnumber" required/>
                      
                  </div>
                 <br>
@@ -96,7 +96,7 @@
                 <br>
                 <div class="text-white bg-dark p-2">
                 <p class="lead text-white">Marital Status</p>
-                <select class="form-control" ng-model="$ctrl.member.maritalStatus" required>
+                <select class="form-control" ng-model="$ctrl.member.maritalstatus" required>
                     <option>Single</option>
                     <option>Married</option>
                     <option>Widowed</option>
@@ -127,11 +127,9 @@
                     </select>
                     </div>
                 <br>
-
                 <button class="btn btn-lg btn-danger my-2" ng-click="$ctrl.cancel();"> Cancel</button>
-                <button class="btn btn-lg btn-success my-2" ng-click="$ctrl.saveRecord();"> Save Record</button>
+                <button class="btn btn-lg btn-success my-2" ng-click="$ctrl.saveRecord();"> Add To Database</button>
            </div>
        </div>
    </form>  
-   
 </div>
