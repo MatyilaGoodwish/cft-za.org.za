@@ -24,9 +24,37 @@
     
   </head>
   <body style="background:white;">
-      <div class="container my-4 rounded p-2">
-          <div class="row p-2">
-              <div class="col-md-3 bg-light p-3 rounded">
+      <div class="container my-4 rounded">
+         <div class="border rounded shadow-sm">
+          <ul class="nav">
+             <li class="nav-link">
+                  <a href="/#/waiting" class="btn btn-block btn-info btn-lg"><img ng-src="images/waiting.png" width="32"/> Waiting List</a>
+              
+             </li>
+             <li class="nav-link">
+                  <a href="/#/new" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> New Applications </a>
+               
+             </li>
+             <li class="nav-link">
+                  <a href="/#/demand" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Demand Database/Approvals</a>
+              
+             </li>
+             <li class="nav-link">
+                  <a href="/#/subsidy" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Subsidy Approvals</a>
+               
+             </li>  
+              <li class="nav-link">
+                  <a href="/#/lostforms" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Lost Forms/Database</a>
+              
+              </li>
+              <li class="nav-link">
+                  <a href="/#/forms" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Form C</a>
+             
+              </li>
+          </ul>
+         </div>
+          <div class="row p-3">
+              <div class="col-md-3 border shadow-sm p-3 rounded">
                <a href="/#/"><img src="./images/Logo.png" class="w-100 "/></a>
                <p class="text-muted text-center">
                   Housing Database
@@ -34,14 +62,8 @@
                <hr/>
                <a href="/#/" class="btn btn-block btn-warning  btn-lg"><img ng-src="images/cpanel.ico" width="32"/> Access Control</a>
                <a href="/#/register" class="btn btn-block btn-warning  btn-lg"><img ng-src="images/user.png" width="32"/> Register User</a>
-                <a href="/#/" class="btn btn-block btn-info btn-lg"><img ng-src="images/waiting.png" width="32"/> Waiting List</a>
-               <a href="/#/" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> New Applications </a>
-               <a href="/#/" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Form C</a>
-               <a href="/#/" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Demand Database Approval</a>
-               <a href="/#/" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Subsidy Approvals</a>
-               <a href="/#/" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Lost Forms/Database</a>
-               <a href="/#/" class="btn btn-block btn-warning btn-lg"><img ng-src="images/manage.png" width="32"/> Manage User</a>  
-               <a href="/#/" class="btn btn-block btn-warning btn-lg"><img ng-src="images/sms.png" width="32"/> SMS Members</a> 
+              <a href="/#/administration" class="btn btn-block btn-warning btn-lg"><img ng-src="images/manage.png" width="32"/> Manage User</a>  
+               <a href="/#/sms" class="btn btn-block btn-warning btn-lg"><img ng-src="images/sms.png" width="32"/> SMS Members</a> 
             </div>
               <div class="col"></div>
               <div class="col-md-8 p-3">
@@ -51,6 +73,7 @@
        </div>
     <script src="app/group/group.component.js"></script>
     <script src="app/members/register.component.js"></script>
+    <script src="app/members/common.component.js"></script>
     <script src="app/services/common.service.js"></script>
   </body>
 </html>
