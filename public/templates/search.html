@@ -60,15 +60,24 @@ form.example::after {
 }
 
 </style>
-<body center>
+ 
 <div class="container">
   <img class="logo" src="https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png"alt="Logo"/>
   <h3 text-alignment="center">Search Database</h3>
+  <p style="margin-bottom: 2em;">
+    
+Please enter your Identity Number below in order to find your status on the Housing Database and click 'Search'
+  </p>
   <!-- The form -->
-<form class="search" action="action_page.php">
-  <input type="text" placeholder="ID number.." name="search">
-  <button type="submit">Search</i></button>
+<form class="search">
+  <input type="text" placeholder="ID number.." ng-model="$ctrl.searchContext">
+  <button type="submit" ng-click="$ctrl.search()">Search</button>
 </form>
+ 
+<br>
+<p style="padding-top:2em;">
+  To register online, please visit our online housing database and fill out the application form. 
+  <a href="/#/register"> Register for Housing Database here </a>
+</p>
 
 </div>
-</body>

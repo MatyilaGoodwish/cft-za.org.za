@@ -24,10 +24,13 @@
                 $locationProvider.hashPrefix("");
                 $routeProvider
                     .when("/", {
-                        template: "<register></register>"
+                        template: "<search></search>"
                     })
                     .when("/logon", {
                         template: "<logon></logon>"
+                    })
+                    .when("/register", {
+                        template: "<register></register>"
                     })
                     .otherwise({
                         redirectTo: "/"
@@ -42,10 +45,36 @@
                     
                 }]
             });
+             //search Component
+             main.component("search", {
+                templateUrl: "templates/search.html",
+                controller: ["ExceptionsSvc","SearchSvc", function (ExceptionsSvc, SearchSvc) {
+                    this.search = function () {
+                        if(!this.searchContext){
+                            ExceptionsSvc.RecordNotFound();
+                        }else if(this.searchContext.length < 13){
+                            ExceptionsSvc.RecordNotValid();
+                        }
+                        else if(this.searchContext.length > 13){
+                            ExceptionsSvc.RecordNotValid();
+                        }
+                        else{
+                            SearchSvc.findMemberInRecords(this.searchContext);
+                        }
+                    }
+                }]
+            });
+
+            main.service("SearchSvc", function (){
+                this.findMemberInRecords = function  (memberIdentification) {
+                    swal("locating member in records "+ memberIdentification);
+                }
+            })
             //Login Component
             main.component("logon", {
                 templateUrl: "templates/logon.html",
-                controller: ["LoginSvc", "ExceptionsSvc", function (LoginSvc, ExceptionsSvc) {
+                controller: ["LoginSvc", "ExceptionsSvc","$location", 
+                function (LoginSvc, ExceptionsSvc, $location) {
                     this.logoImageUrlPath = "https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png";
                     this.attemptUserSignInService = function () {
                         if (this.username && this.password) {
@@ -53,6 +82,9 @@
                         } else {
                             ExceptionsSvc.InvalidUserException();
                         }
+                    }
+                    this.cancellation = function(){
+                        $location.path("/").replace();
                     }
                 }]
             });
@@ -78,6 +110,12 @@
                 }
                 this.loginSuccessNotify = function () {
                     swal("Login Success", "User has been signed In succesfully", "success");
+                }
+                this.RecordNotFound = function () {
+                    swal("Record Information", "Record not found in the system", "info");
+                }
+                this.RecordNotValid = function () {
+                    swal("Record Invalid", "Record not valid or too short for ID Number", "info");
                 }
             });
         })()

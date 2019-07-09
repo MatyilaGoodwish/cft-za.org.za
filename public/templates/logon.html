@@ -94,7 +94,7 @@ span.psw {
 
 </style>
 
-<body>
+ 
   <div class="content">
 <form>
   <div class="imgcontainer">
@@ -102,6 +102,9 @@ span.psw {
   </div>
 
   <div class="container">
+      <h1>Database Administrator</h1>
+      <p>You can manage on the City's housing database online or at your nearest CFT Offices</p>
+      <hr>
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" ng-model="$ctrl.username" name="uname" required>
 
@@ -115,10 +118,10 @@ span.psw {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <button type="button" class="cancelbtn" ng-click="$ctrl.cancellation()">Cancel</button>
+    <span class="psw">Contact Support <a href="#"> 087 057-1581</a></span>
   </div>
 </form>
 
 </div>
-</body>
+ 
