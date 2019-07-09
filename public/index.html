@@ -5,27 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Housing Database</title>
     <script src="assets/angular.min.js"></script>
     <script src="assets/angular-route.js"></script>
-    <script src="assets/swal.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyBcY86zhtxk58neT-6jq4yPQkVI-rehHRQ",
-            authDomain: "cftzaorg.firebaseapp.com",
-            databaseURL: "https://cftzaorg.firebaseio.com",
-            projectId: "cftzaorg",
-            storageBucket: "cftzaorg.appspot.com",
-            messagingSenderId: "1006717352105",
-            appId: "1:1006717352105:web:ec874b4673de73ce"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="assets/swal.js"></script> 
+    <script src="/__/firebase/6.2.4/firebase-app.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-auth.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
 </head>
 
 <body>
@@ -37,22 +24,10 @@
                 $locationProvider.hashPrefix("");
                 $routeProvider
                     .when("/", {
-                        template: "<login></login>"
-                    })
-                    .when("/register", {
                         template: "<register></register>"
                     })
-                    .when("/dashboard", {
-                        template: "<dashboard></dashboard>",
-                        resolve: {
-                            checkUserState: function (/*Goodwish to update state of the active user*/) {
-                                firebase.auth().onAuthStateChanged(function (user) {
-                                    if (!user) {
-                                        $location.path("/").replace();
-                                    }
-                                });
-                            }
-                        }
+                    .when("/logon", {
+                        template: "<logon></logon>"
                     })
                     .otherwise({
                         redirectTo: "/"
@@ -68,8 +43,8 @@
                 }]
             });
             //Login Component
-            main.component("login", {
-                templateUrl: "LogIn.html",
+            main.component("logon", {
+                templateUrl: "templates/logon.html",
                 controller: ["LoginSvc", "ExceptionsSvc", function (LoginSvc, ExceptionsSvc) {
                     this.logoImageUrlPath = "https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png";
                     this.attemptUserSignInService = function () {
