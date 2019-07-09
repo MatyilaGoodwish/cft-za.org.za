@@ -58,26 +58,39 @@ form.example::after {
   clear: both;
   display: table;
 }
+/* Set a style for all buttons */
+.login{
+  background-color: #E25A28;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width:100%;
+  font-size: 17px;
+  margin-top: 25px;
+}
 
+@media screen and (max-width: 600px) {
+  .col-25, .col-75,.container, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 </style>
- 
+<body center>
 <div class="container">
   <img class="logo" src="https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png"alt="Logo"/>
   <h3 text-alignment="center">Search Database</h3>
-  <p style="margin-bottom: 2em;">
-    
-Please enter your Identity Number below in order to find your status on the Housing Database and click 'Search'
-  </p>
+  <p>Please enter your Identity Number below in order to find your status on the Housing Database and click 'Search'</p>
   <!-- The form -->
-<form class="search">
-  <input type="text" placeholder="ID number.." ng-model="$ctrl.searchContext">
-  <button type="submit" ng-click="$ctrl.search()">Search</button>
+<form class="search" action="action_page.php">
+  <input type="text" placeholder="ID number.." name="search">
+  <button type="submit">Search</i></button>
 </form>
- 
-<br>
-<p style="padding-top:2em;">
-  To register online, please visit our online housing database and fill out the application form. 
-  <a href="/#/register"> Register for Housing Database here </a>
-</p>
 
+    <button class="Login"type="submit">Register</button>
+    <label>
+<p>To register online, please visit our online housing database and fill out the application form.</p>
 </div>
+</body>
