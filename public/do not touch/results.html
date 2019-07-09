@@ -1,0 +1,139 @@
+
+<style>
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  width: 50%;
+}
+
+.logo{
+      width: 500px;
+  padding-left: 50px;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #E25A28;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+
+
+
+</style>
+
+
+
+
+
+<body>
+<form action="action_page.php">
+  <div class="container">
+    <img class="logo" src="https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png"alt="Logo"/>
+    <h1>Register</h1>
+    <p>Please fill in this form to register.</p>
+    <hr>
+
+    <label for="text"><b>Status</b></label>
+    <input type="text" placeholder="Status" name="Status" required/>
+    <label for="text"><b>Surname</b></label>
+    <input type="text" placeholder="surname" name="surname" required/>
+
+    <label for="text"><b>Firstname</b></label>
+    <input type="text" placeholder="Firstname" name="Firstname" required/>
+
+    <label for="text"><b>I.D number</b></label>
+    <input type="text" placeholder="I.D munber" name="idmunber" required/>
+
+    <label for="text"><b>Date of birth</b></label>
+    <input type="text" placeholder="Date of birth" name="dob" required/>
+    <hr>
+
+    <label for="text"><b>Flat/Room name and number</b></label>
+    <input type="text" placeholder="Flat/Room name" name="flatroom" required/>
+
+    <label for="text"><b>Street name and number</b></label>
+    <input type="text" placeholder="Street name and number" name="street" required/>
+
+    <label for="textl"><b>Suburb</b></label>
+    <input type="text" placeholder="Suburb" name="Suburb" required/>
+
+    <label for="accodetails"><b>Postal code</b></label>
+    <input type="text" placeholder="Postal code" name="postcode" required/>
+
+    <label for="number"><b>1st Cellphone number</b></label>
+    <input type="text" placeholder="1st cellphone number" name="cellnumber" required/>
+
+    <label for="email"><b>2nd Cellphone number</b></label>
+    <input type="text" placeholder="2and cellphone number" name="cellnumber2" optional/>
+
+    <label for="text"><b>Marital type</b></label>
+    <input type="text" placeholder="Marital type" name="Maritaltype" required/>
+
+    <label for="date"><b>Date married</b></label>
+    <input type="date" placeholder="Date married" name="datemarried" required/>
+
+    <label for="Date"><b>Date divorce</b></label>
+    <input type="date" placeholder="Date divorce" name="datedivorce" required/>
+
+    <label for="accomodation"><b>Present accomodation</b></label>
+    <input type="text" placeholder="Present accomodation" name="accomodation" required/>
+
+    <label for="accomodation"><b>Accomodation details</b></label>
+    <input type="text" placeholder="accomodation details" name="accodetails" required/>
+   <hr>
+
+
+    <p>By creating an account you agree to CFT's <a href="#">Terms & Privacy</a>.</p>
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+  <div class="container signin">
+
+  </div>
+</form>
+</body>
+</html>

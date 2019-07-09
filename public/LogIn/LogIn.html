@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="common/js/form_init.js" id="form_init_script"
+    data-name="">
+    </script>
+    <link rel="stylesheet" type="text/css" href="theme/default/css/default.css"
+    id="theme" />
+    <title>
+      login
+    </title>
+    <script src="assets/swal.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBcY86zhtxk58neT-6jq4yPQkVI-rehHRQ",
+            authDomain: "cftzaorg.firebaseapp.com",
+            databaseURL: "https://cftzaorg.firebaseio.com",
+            projectId: "cftzaorg",
+            storageBucket: "cftzaorg.appspot.com",
+            messagingSenderId: "1006717352105",
+            appId: "1:1006717352105:web:ec874b4673de73ce"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  
+  <body><style>#docContainer .fb_cond_applied{ display:none; }</style><noscript><style>#docContainer .fb_cond_applied{ display:inline-block; }</style></noscript><form class="fb-toplabel fb-100-item-column selected-object" id="docContainer"
+action="" enctype="multipart/form-data" method="POST" novalidate="novalidate"
+data-form="preview">
+  <div class="fb-form-header" id="fb-form-header1">
+    <a class="fb-link-logo" id="fb-link-logo1" style="max-width: 8180px;"
+    target="_blank"><img title="Alternative text" class="fb-logo" id="fb-logo1" style="display: none;" alt="Alternative text" src="common/images/image_default.png"/></a>
+  </div>
+  <div class="section" id="section1">
+    <div class="column ui-sortable" id="column1">
+      <div class="fb-item" id="item6" style="max-width: 8180px; opacity: 1;">
+        <a class="fb-image" href="http://www.cft-za.org.za" target="_blank"><img title="Alternative text" id="item6_img_0" style="width: 100%;" alt="Alternative text" src="common/images/Logo_1.png"/></a>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item2" style="padding-top: 15px; padding-bottom: 15px;">
+        <div class="fb-grouplabel">
+          <label id="item2_label_0" style="display: inline;">Username</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="username" id="item2_text_1" required type="text" maxlength="254"
+          placeholder="Enter Username" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item7" style="padding-top: 15px; padding-bottom: 15px;">
+        <div class="fb-grouplabel">
+          <label id="item7_label_0" style="display: inline;">Email</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="text7" id="item7_text_1" required type="text" maxlength="254"
+          placeholder="Enter Email" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column fb-one-column" id="item10">
+        <div class="fb-grouplabel">
+          <label id="item10_label_0" style="display: inline;">  </label>
+        </div>
+        <div class="fb-checkbox" style="font-size: 15px; font-weight: normal;">
+          <label id="item10_0_label"><input name="checkbox10[]" id="item10_0_checkbox" type="checkbox" data-hint="" value="Remeber Me" /><span class="fb-fieldlabel" id="item10_0_span">Remeber Me</span></label>
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item12">
+        <div class="fb-html">
+          <div id="item12_div_0">
+            <a target="_blank">Forgot my password</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fb-captcha fb-item-alignment-center" id="fb-captcha_control"
+  style="display: none; cursor: default;">
+    <img src="editordata/images/recaptcharecaptchav2-light.png" />
+  </div>
+  <div class="fb-footer fb-item-alignment-right" id="fb-submit-button-div">
+    <input class="fb-button-special non-standard" id="fb-submit-button" style="border-width: 0px; padding: 15px 25px; width: auto; height: auto; font-family: Helvetica, Arial; background-image: none; background-color: rgb(226, 90, 40);"
+    type="submit" data-regular="none" data-valign="top" value="LogIn" />
+  </div>
+</form>
+</body>
+</html>

@@ -1,85 +1,112 @@
 <!DOCTYPE html>
-<html ng-app="app">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CFT Housing Database | CRM Solution</title>
-    <meta name="keywords" content="housing,rdp,town,planning" />
-    <meta name="description" content="CFT Housing Application | Database & Estates Internal" />
-    <link rel="shortcut icon" href="images/Logo.png" type="image/png" />
-    <!-- update the version number as needed -->
-    <script src="/__/firebase/6.2.4/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script src="/__/firebase/6.2.4/firebase-auth.js"></script>
-    <script src="/__/firebase/6.2.4/firebase-database.js"></script>
-    <script src="/__/firebase/6.2.4/firebase-messaging.js"></script>
-    <script src="/__/firebase/6.2.4/firebase-firestore.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <link href="styles/kendo.common.min.css" rel="stylesheet" />
-    <link href="styles/kendo.office365.min.css" rel="stylesheet" />
-    <script src="js/jszip.min.js" ></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/kendo.all.min.js"></script>
-    <script src="/__/firebase/init.js"></script>
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-route.js"></script>
-    <script src="app/bootstrap.js"></script>
-    <script src="lib/swal.js"></script>
-    <link href="styles/styles.min.css" rel="stylesheet" />
-    
-  </head>
-  <body style="background:white;">
-      <div class="container my-4 rounded">
-         <div class="border rounded shadow-sm">
-          <ul class="nav">
-             <li class="nav-link">
-                  <a href="/#/waiting" class="btn btn-block btn-info btn-lg"><img ng-src="images/waiting.png" width="32"/> Waiting List</a>
-              
-             </li>
-             <li class="nav-link">
-                  <a href="/#/new" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> New Applications </a>
-               
-             </li>
-             <li class="nav-link">
-                  <a href="/#/demand" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Demand Database/Approvals</a>
-              
-             </li>
-             <li class="nav-link">
-                  <a href="/#/subsidy" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Subsidy Approvals</a>
-               
-             </li>  
-              <li class="nav-link">
-                  <a href="/#/lostforms" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Lost Forms/Database</a>
-              
-              </li>
-              <li class="nav-link">
-                  <a href="/#/forms" class="btn btn-block btn-info btn-lg"><img ng-src="images/eq.png" width="32"/> Form C</a>
-             
-              </li>
-          </ul>
-         </div>
-          <div class="row p-3">
-              <div class="col-md-3 border shadow-sm p-3 rounded">
-               <a href="/#/"><img src="./images/Logo.png" class="w-100 "/></a>
-               <p class="text-muted text-center">
-                  Housing Database
-               </p>
-               <hr/>
-               <a href="/#/" class="btn btn-block btn-warning  btn-lg"><img ng-src="images/cpanel.ico" width="32"/> Access Control</a>
-               <a href="/#/register" class="btn btn-block btn-warning  btn-lg"><img ng-src="images/user.png" width="32"/> Register User</a>
-              <a href="/#/manage" class="btn btn-block btn-warning btn-lg"><img ng-src="images/manage.png" width="32"/> Manage User</a>  
-               <a href="/#/sms" class="btn btn-block btn-warning btn-lg"><img ng-src="images/sms.png" width="32"/> SMS Members</a> 
-            </div>
-              <div class="col"></div>
-              <div class="col-md-8 p-3">
-                 <div ng-view></div>
-              </div>
-          </div>
-       </div>
-    <script src="app/group/group.component.js"></script>
-    <script src="app/members/register.component.js"></script>
-    <script src="app/members/common.component.js"></script>
-    <script src="app/members/management.component.js"></script>
-    <script src="app/services/common.service.js"></script>
-  </body>
+<html lang="en" ng-app="InitApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="assets/angular.min.js"></script>
+    <script src="assets/angular-route.js"></script>
+    <script src="assets/swal.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBcY86zhtxk58neT-6jq4yPQkVI-rehHRQ",
+            authDomain: "cftzaorg.firebaseapp.com",
+            databaseURL: "https://cftzaorg.firebaseio.com",
+            projectId: "cftzaorg",
+            storageBucket: "cftzaorg.appspot.com",
+            messagingSenderId: "1006717352105",
+            appId: "1:1006717352105:web:ec874b4673de73ce"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <div ng-view></div>
+    <script>
+        (function () {
+            const main = angular.module("InitApp", ["ngRoute"]);
+            main.config(function ($locationProvider, $routeProvider) {
+                $locationProvider.hashPrefix("");
+                $routeProvider
+                    .when("/", {
+                        template: "<login></login>"
+                    })
+                    .when("/register", {
+                        template: "<register></register>"
+                    })
+                    .when("/dashboard", {
+                        template: "<dashboard></dashboard>",
+                        resolve: {
+                            checkUserState: function (/*Goodwish to update state of the active user*/) {
+                                firebase.auth().onAuthStateChanged(function (user) {
+                                    if (!user) {
+                                        $location.path("/").replace();
+                                    }
+                                });
+                            }
+                        }
+                    })
+                    .otherwise({
+                        redirectTo: "/"
+                    })
+            });
+
+            
+            //Registration Component
+            main.component("register", {
+                templateUrl: "templates/register.html",
+                controller: ["ExceptionsSvc", function (ExceptionsSvc) {
+                    
+                }]
+            });
+            //Login Component
+            main.component("login", {
+                templateUrl: "LogIn.html",
+                controller: ["LoginSvc", "ExceptionsSvc", function (LoginSvc, ExceptionsSvc) {
+                    this.logoImageUrlPath = "https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png";
+                    this.attemptUserSignInService = function () {
+                        if (this.username && this.password) {
+                            LoginSvc.LoginUser(this.username, this.password);
+                        } else {
+                            ExceptionsSvc.InvalidUserException();
+                        }
+                    }
+                }]
+            });
+            //Authentication Service
+            main.service("LoginSvc", function (ExceptionsSvc, $location) {
+                this.LoginUser = function (emailAccount, accountPassword) {
+                    firebase.auth().signInWithEmailAndPassword(emailAccount, accountPassword)
+                        .then(function () {
+                            ExceptionsSvc.loginSuccessNotify();
+                            //$location.path("/dashboard").replace();
+                        })
+                        .catch(function (error) {
+                            //dynamic error response
+                            swal("Login Error", error.message, "error");
+                        })
+                }
+            })
+
+            //Exception Handling Error Messages Service
+            main.service("ExceptionsSvc", function () {
+                this.InvalidUserException = function () {
+                    swal("Invalid User", "Check your username and password", "error");
+                }
+                this.loginSuccessNotify = function () {
+                    swal("Login Success", "User has been signed In succesfully", "success");
+                }
+            });
+        })()
+    </script>
+</body>
+
 </html>

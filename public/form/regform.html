@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="common/js/form_init.js" id="form_init_script"
+    data-name="">
+    </script>
+    <link rel="stylesheet" type="text/css" href="theme/default/css/default.css"
+    id="theme" />
+    <title>
+    </title>
+     
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script src="./register.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBcY86zhtxk58neT-6jq4yPQkVI-rehHRQ",
+            authDomain: "cftzaorg.firebaseapp.com",
+            databaseURL: "https://cftzaorg.firebaseio.com",
+            projectId: "cftzaorg",
+            storageBucket: "cftzaorg.appspot.com",
+            messagingSenderId: "1006717352105",
+            appId: "1:1006717352105:web:ec874b4673de73ce"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="../controllers/registrations.js"></script>
+  </head>
+  
+  <body ><style>#docContainer .fb_cond_applied{ display:none; }</style><noscript><style>
+  #docContainer .fb_cond_applied{ display:inline-block; }</style></noscript>
+  <form class="fb-toplabel fb-100-item-column selected-object" id="docContainer"
+action="register.php" enctype="multipart/form-data" method="POST" novalidate="novalidate"
+data-form="preview" name="register">
+  <div class="fb-form-header" id="fb-form-header1" style="min-height: 0px;">
+    <a class="fb-link-logo" id="fb-link-logo1" target="_blank"><img title="Alternative text" class="fb-logo" id="fb-logo1" style="display: none;" alt="Alternative text" src="common/images/image_default.png"/></a>
+  </div>
+  <div class="section" id="section1">
+    <div class="column ui-sortable" id="column1">
+      <div class="fb-item" id="item1" style="max-width: 8180px;">
+        <a class="fb-image" href="http://www.cft-za.org.za" target="_blank"><img title="Alternative text" id="item1_img_0" style="width: 100%;" alt="Alternative text" src="common/images/Logo.png"/></a>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item4">
+        <div class="fb-header">
+          <h2 style="display: inline;">
+            Registration Form
+          </h2>
+        </div>
+      </div>
+      <div class="fb-item fb-50-item-column" id="item12">
+        <div class="fb-grouplabel">
+          <label id="item12_label_0" style="display: inline;">Surname</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="surname" id="item12_text_1" required type="text" maxlength="254"
+          placeholder="surname" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-50-item-column" id="item13" style="opacity: 1;">
+        <div class="fb-grouplabel">
+          <label id="item13_label_0" style="display: inline;">Firstname</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="Firstname" id="item13_text_1" required type="text" maxlength="254"
+          placeholder="Firstname" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-50-item-column" id="item14">
+        <div class="fb-grouplabel">
+          <label id="item14_label_0" style="display: inline;">I.D Number</label>
+        </div>
+        <div class="fb-input-number">
+          <input name="idnumbers" id="1item14_number_1" required type="number"  step="1" placeholder="SA I.D Number" autocomplete="off"
+          data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-50-item-column" id="item16">
+        <div class="fb-grouplabel">
+          <label id="item16_label_0" style="display: inline;">Date of birth</label>
+        </div>
+        <div class="fb-input-date">
+          <input name="dateofbirth" class="datepicker" id="item16_date_1" required
+          type="text" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item" id="item17">
+        <div class="fb-sectionbreak">
+          <hr style="max-width: 960px;">
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item18">
+        <div class="fb-grouplabel">
+          <label id="item18_label_0" style="display: inline;">Flat/Room name and number</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="flatroom" id="item18_text_1" required type="text" maxlength="254"
+          placeholder="Flat/Room number" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item19">
+        <div class="fb-grouplabel">
+          <label id="item19_label_0" style="display: inline;">Street name and number</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="street" id="item19_text_1" required type="text" maxlength="254"
+          placeholder="Street name and number" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item20">
+        <div class="fb-grouplabel">
+          <label id="item20_label_0" style="display: inline;">Suburb</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="suburb" id="item20_text_1" type="text" maxlength="254" placeholder="Suburb"
+          autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item31">
+        <div class="fb-grouplabel">
+          <label id="item31_label_0" style="display: inline;">Postal Code</label>
+        </div>
+        <div class="fb-input-number">
+          <input name="postcode" id="item31_number_1" type="number" min="0" max="999999999"
+          step="1" placeholder="Postal Code" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item22">
+        <div class="fb-grouplabel">
+          <label id="item22_label_0" style="display: inline;">1st Phone Number </label>
+        </div>
+        <div class="fb-phone">
+          <input name="cellnum1" id="item22_tel_1" type="tel" placeholder="phone number"
+          data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item23">
+        <div class="fb-grouplabel">
+          <label id="item23_label_0" style="display: inline;">2dn Phone Number</label>
+        </div>
+        <div class="fb-phone">
+          <input name="cellnum2" id="item23_tel_1" type="tel" placeholder="2dn Phone Number"
+          data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item24">
+        <div class="fb-grouplabel">
+          <label id="item24_label_0" style="display: inline;">Landline telephone number</label>
+        </div>
+        <div class="fb-phone">
+          <input name="telnum" id="item24_tel_1" required type="tel" placeholder="Landline"
+          data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item25">
+        <div class="fb-grouplabel">
+          <label id="item25_label_0" style="display: inline;">Marital type</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="Maritaltype" id="item25_text_1" required type="text" maxlength="254"
+          placeholder="Marital type" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item26">
+        <div class="fb-grouplabel">
+          <label id="item26_label_0" style="display: inline;">Date Married</label>
+        </div>
+        <div class="fb-input-date">
+          <input name="date26" class="datepicker" id="item26_date_1" type="text"
+          data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item27">
+        <div class="fb-grouplabel">
+          <label id="item27_label_0" style="display: inline;">Date of divorced</label>
+        </div>
+        <div class="fb-input-date">
+          <input name="date27" class="datepicker" id="item27_date_1" type="text"
+          data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item28">
+        <div class="fb-grouplabel">
+          <label id="item28_label_0" style="display: inline;">Disability</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="Disability" id="item28_text_1" type="text" maxlength="254"
+          placeholder="Disability" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item29">
+        <div class="fb-grouplabel">
+          <label id="item29_label_0" style="display: inline;">Present accomodation</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="accomodation" id="item29_text_1" type="text" maxlength="254"
+          placeholder="Present accomodation" autocomplete="off" data-hint="" />
+        </div>
+      </div>
+      <div class="fb-item fb-100-item-column" id="item30">
+        <div class="fb-grouplabel">
+          <label id="item30_label_0" style="display: inline;">Details of property owned</label>
+        </div>
+        <div class="fb-input-box">
+          <input name="detailproperty" id="item30_text_1" type="text" maxlength="254"
+          placeholder="Details of property owned" autocomplete="off" data-hint=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fb-captcha fb-item-alignment-center" id="fb-captcha_control"
+  style="display: none; cursor: default;">
+    <img src="editordata/images/recaptcharecaptchav2-light.png" />
+  </div>
+  <div class="fb-footer fb-item-alignment-right" id="fb-submit-button-div">
+    <input class="fb-button-special non-standard" id="fb-submit-button" style="border-width: 0px; padding: 15px 25px; width: auto; height: auto; font-family: Helvetica, Arial; font-size: 14px; background-image: none; background-color: rgb(226, 90, 40);"
+    type="button" data-regular="none" value="Submit Application" onclick="Registration.submit()" />
+  </div>
+</form>
+
+ 
+</body>
+</html>
