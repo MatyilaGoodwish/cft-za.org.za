@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="InitApp">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,112 +13,13 @@
     <script src="/__/firebase/6.2.4/firebase-firestore.js"></script>
     <script src="/__/firebase/init.js"></script>
 </head>
-
 <body>
     <div ng-view></div>
-    <script>
-        (function () {
-            const main = angular.module("InitApp", ["ngRoute"]);
-            main.config(function ($locationProvider, $routeProvider) {
-                $locationProvider.hashPrefix("");
-                $routeProvider
-                    .when("/", {
-                        template: "<search></search>"
-                    })
-                    .when("/logon", {
-                        template: "<logon></logon>"
-                    })
-                    .when("/register", {
-                        template: "<register></register>"
-                    })
-                    .otherwise({
-                        redirectTo: "/"
-                    })
-            });
-
-            
-            //Registration Component
-            main.component("register", {
-                templateUrl: "templates/register.html",
-                controller: ["ExceptionsSvc", function (ExceptionsSvc) {
-                    
-                }]
-            });
-             //search Component
-             main.component("search", {
-                templateUrl: "templates/search.html",
-                controller: ["ExceptionsSvc","SearchSvc", function (ExceptionsSvc, SearchSvc) {
-                    this.search = function () {
-                        if(!this.searchContext){
-                            ExceptionsSvc.RecordNotFound();
-                        }else if(this.searchContext.length < 13){
-                            ExceptionsSvc.RecordNotValid();
-                        }
-                        else if(this.searchContext.length > 13){
-                            ExceptionsSvc.RecordNotValid();
-                        }
-                        else{
-                            SearchSvc.findMemberInRecords(this.searchContext);
-                        }
-                    }
-                }]
-            });
-
-            main.service("SearchSvc", function (){
-                this.findMemberInRecords = function  (memberIdentification) {
-                    swal("locating member in records "+ memberIdentification);
-                }
-            })
-            //Login Component
-            main.component("logon", {
-                templateUrl: "templates/logon.html",
-                controller: ["LoginSvc", "ExceptionsSvc","$location", 
-                function (LoginSvc, ExceptionsSvc, $location) {
-                    this.logoImageUrlPath = "https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png";
-                    this.attemptUserSignInService = function () {
-                        if (this.username && this.password) {
-                            LoginSvc.LoginUser(this.username, this.password);
-                        } else {
-                            ExceptionsSvc.InvalidUserException();
-                        }
-                    }
-                    this.cancellation = function(){
-                        $location.path("/").replace();
-                    }
-                }]
-            });
-            //Authentication Service
-            main.service("LoginSvc", function (ExceptionsSvc, $location) {
-                this.LoginUser = function (emailAccount, accountPassword) {
-                    firebase.auth().signInWithEmailAndPassword(emailAccount, accountPassword)
-                        .then(function () {
-                            ExceptionsSvc.loginSuccessNotify();
-                            //$location.path("/dashboard").replace();
-                        })
-                        .catch(function (error) {
-                            //dynamic error response
-                            swal("Login Error", error.message, "error");
-                        })
-                }
-            })
-
-            //Exception Handling Error Messages Service
-            main.service("ExceptionsSvc", function () {
-                this.InvalidUserException = function () {
-                    swal("Invalid User", "Check your username and password", "error");
-                }
-                this.loginSuccessNotify = function () {
-                    swal("Login Success", "User has been signed In succesfully", "success");
-                }
-                this.RecordNotFound = function () {
-                    swal("Record Information", "Record not found in the system", "info");
-                }
-                this.RecordNotValid = function () {
-                    swal("Record Invalid", "Record not valid or too short for ID Number", "info");
-                }
-            });
-        })()
-    </script>
+    <script src="httpRoutes/router.config.js"></script>
+    <script src="components/register.component.js"></script>
+    <script src="components/search.component.js"></script>
+    <script src="components/logon.component.js"></script>
+    <script src="services/common.services.js"></script>
 </body>
 
 </html>
