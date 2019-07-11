@@ -27,7 +27,7 @@
           
         }
         /* Full-width input fields */
-        input[type=text], input[type=password] {
+        input[type=text], input[type=password], select {
           width: 100%;
           padding: 15px;
           margin: 5px 0 22px 0;
@@ -102,51 +102,42 @@
         <label for="text"><b>Surname</b></label>
         <input type="text" placeholder="surname" ng-model="$ctrl.member.surname" required/>
     
-        <label for="text"><b>Firstname</b></label>
-        <input type="text" placeholder="Firstname" ng-model="$ctrl.member.firstname" required/>
-    
+        <label for="text"><b>Fullnames</b></label>
+        <input type="text" placeholder="Firstname" ng-model="$ctrl.member.fullnames" required/>
+        
         <label for="text"><b>I.D number</b></label>
         <input type="text" placeholder="I.D munber" ng-model="$ctrl.member.idnumber" required/>
     
         <label for="text"><b>Date of birth</b></label>
         <input type="date" placeholder="Date of birth" ng-model="$ctrl.member.dob" required/>
         <hr>
-    
-        <label for="text"><b>Flat/Room name and number</b></label>
-        <input type="text" placeholder="Flat/Room name" ng-model="$ctrl.member.flatroom" required/>
-    
         <label for="text"><b>Street name and number</b></label>
         <input type="text" placeholder="Street name and number" ng-model="$ctrl.member.street" required/>
     
-        <label for="textl"><b>Suburb</b></label>
+        <label for="textl"><b>Suburb/City/Area</b></label>
         <input type="text" placeholder="Suburb" ng-model="$ctrl.member.surburb" required/>
     
         <label for="accodetails"><b>Postal code</b></label>
         <input type="text" placeholder="Postal code" ng-model="$ctrl.member.postcode" required/>
     
-        <label for="number"><b>1st Cellphone number</b></label>
-        <input type="text" placeholder="1st cellphone number" ng-model="$ctrl.member.cellnumber1" required/>
-    
-        <label for="email"><b>2nd Cellphone number</b></label>
-        <input type="text" placeholder="2and cellphone number" ng-model="$ctrl.member.cellnumber2" optional/>
-    
+        <label for="number"><b>Cellphone number</b></label>
+        <input type="text" placeholder="Cellphone number" ng-model="$ctrl.member.cellphone" required/>
+       
         <label for="text"><b>Marital type</b></label>
-        <input type="text" placeholder="Marital type" ng-model="$ctrl.member.maritaltype" />
+        
+        <select ng-model="$ctrl.member.maritaltype" placeholder="Marital type" >
+          <option>N/A</option>
+          <option>COP</option>
+        </select>
     
         <label for="date"><b>Date married</b></label>
         <input type="date" placeholder="Date married" ng-model="$ctrl.member.marriage_date" />
-    
-        <label for="Date"><b>Date divorce</b></label>
-        <input type="date" placeholder="Date divorce" ng-model="$ctrl.member.divorce_date" />
-    
-        <label for="accomodation"><b>Present accomodation</b></label>
-        <input type="text" placeholder="Present accomodation" ng-model="$ctrl.member.accomodation_present"/>
-    
-        <label for="accomodation"><b>Accomodation details</b></label>
-        <input type="text" placeholder="accomodation details" ng-model="$ctrl.member.accomodation_details" required/>
-       <hr>
+     
+        <hr>
     
         <button type="button" class="registerbtn" ng-click="$ctrl.addRecord()">Register</button>
+
+        <button type="button" class="registerbtn" ng-click="$ctrl.cancel()">Cancel</button>
       </div>
     
       <div class="container signin">

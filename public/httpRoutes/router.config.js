@@ -12,6 +12,18 @@
             .when("/register", {
                 template: "<register></register>"
             })
+            .when("/results", {
+                template: "<results></results>",
+                resolve: {
+                    authentication: function($location){
+                        firebase.auth().onAuthStateChanged(function(user){
+                            if(!user){
+                                window.location.replace("/#/");
+                            }
+                        })
+                    }
+                }
+            })
             .otherwise({
                 redirectTo: "/"
             })

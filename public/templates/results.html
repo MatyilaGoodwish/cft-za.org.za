@@ -1,0 +1,127 @@
+
+    <style>
+            .content{
+            width: 800px;
+            
+            border: 1px solid #ccc;
+            padding-top: 50px;
+            padding-bottom: 100px;
+            padding-left: 25px;
+            padding-right: 25px;
+            align-items: center;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.28);
+            border-radius: 6px;
+            margin: 40px auto;
+            }
+            
+            * {box-sizing: border-box}
+            
+            /* Add padding to containers */
+            .container {
+              padding: 16px;
+              width: 100%;
+            }
+            
+            .logo{
+                  width: 100%;
+              
+            }
+            /* Full-width input fields */
+            input[type=text], input[type=password], select {
+              width: 100%;
+              padding: 15px;
+              margin: 5px 0 22px 0;
+              display: inline-block;
+              border: none;
+              background: #f1f1f1;
+            }
+             /* Full-width input fields */
+             input[type=date], input[type=password] {
+              width: 100%;
+              padding: 15px;
+              margin: 5px 0 22px 0;
+              display: inline-block;
+              border: none;
+              background: #f1f1f1;
+            }
+            
+            input[type=text]:focus, input[type=password]:focus {
+              background-color: #ddd;
+              outline: none;
+            }
+            
+            /* Overwrite default styles of hr */
+            hr {
+              border: 1px solid #f1f1f1;
+              margin-bottom: 25px;
+            }
+            
+            /* Set a style for the submit/register button */
+            .registerbtn {
+              background-color: #E25A28;
+              color: white;
+              padding: 16px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              opacity: 0.9;
+            }
+            
+            .registerbtn:hover {
+              opacity:1;
+            }
+            
+            /* Add a blue text color to links */
+            a {
+              color: dodgerblue;
+            }
+            
+            /* Set a grey background color and center the text of the "sign in" section */
+            .signin {
+              background-color: #f1f1f1;
+              text-align: center;
+            }
+            
+            
+            
+            
+            </style>
+              
+          <div class="content">
+        
+        <form action="action_page.php">
+          <div class="container">
+            <img class="logo" src="https://cft-za.org.za/home/wp-content/uploads/2019/06/Logo-1.png"alt="Logo"/>
+            <h1>Confirmation of Records</h1>
+            <hr>
+        
+            <label for="text"><b>Status</b></label>
+            <input type="text" placeholder="Status" value="{{$ctrl.member.status | uppercase}}" name="Status" readonly/>
+            <label for="text"><b>Surname</b></label>
+            <input type="text" placeholder="surname" value="{{$ctrl.member.surname}}" readonly />
+        
+            <label for="text"><b>Fullnames</b></label>
+            <input type="text" placeholder="Firstname" value="{{$ctrl.member.fullnames}}" readonly/>
+            
+            <label for="text"><b>I.D number</b></label>
+            <input type="text" placeholder="I.D munber" value="{{$ctrl.member.idnumber}}" readonly />
+        
+            
+            <hr>
+            
+            <label for="number"><b>Cellphone number</b></label>
+            <input type="text" placeholder="Cellphone number" value="{{$ctrl.member.cellphone}}" required/>
+          
+             
+            <button type="button" class="registerbtn" ng-click="$ctrl.cancel()">Close</button>
+          </div>
+        
+          <div class="container signin">
+             
+          </div>
+        </form>
+        
+      </div>
+        
+      
